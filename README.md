@@ -1,6 +1,6 @@
 # Sorty
 
-This gem is used for sorting AR collections in controller or APIs.
+This gem is used for sorting collection in a Rails controller or API given a set of parameters.
 
 ## Installation
 

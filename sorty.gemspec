@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sorty::VERSION
   spec.authors       = ["Kat Padilla"]
   spec.email         = ["hello@katpadi.ph"]
-  spec.summary       = This gem is used for sorting collection in a Rails controller or API.
-  spec.description   = This gem is used for sorting collection in a Rails controller or API.
+  spec.summary       = This gem is used for sorting collection in a Rails controller or API given column name and direction parameters.
+  spec.description   = This gem is used for sorting collection in a Rails controller or API given a set of parameters.
   spec.homepage      = ""
   spec.license       = "MIT"
 
