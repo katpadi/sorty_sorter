@@ -9,7 +9,7 @@ When defining valid columns that are "sortable", you can choose to mask the attr
 
 Add this line to your application's Gemfile:
 
-    gem 'sorty', :git => 'git://github.com/katpadi/sorty.git'
+    gem 'sorty-sort'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorty
+    $ gem install sorty-sort
 
 ## Usage
 
@@ -29,6 +29,7 @@ Or install it yourself as:
     ```
 
    In the example above, `update_date` is the exposed attribute and it represents the `updated_at` column in DB.
+   The declaration will serve as the "valid" attributes that may be used for sorting.
 
 2. Call sort method:
 
