@@ -6,8 +6,12 @@ module Extensions
       extend ActiveSupport::Concern
 
       # Introduce a new AR Relation method :-)
-      def sorty_sort(column, direction)
+      def sorty_sort(column = nil, direction = nil)
         ::Sorty::Sort.apply(self, column, direction)
+      end
+
+      def sorty_sort!(column = nil, direction = nil)
+        ::Sorty::Sort.apply!(self, column, direction)
       end
     end
   end

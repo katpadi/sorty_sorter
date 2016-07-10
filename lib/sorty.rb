@@ -3,6 +3,7 @@ require 'sorty/declaration'
 require 'sorty/params'
 require 'sorty/relation'
 require 'sorty/sort'
+require 'sorty/errors'
 
 require 'active_record'
 
