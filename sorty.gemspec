@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sorty::VERSION
   spec.authors       = ["Kat Padilla"]
   spec.email         = ["hello@katpadi.ph"]
-  spec.summary       = "This gem is used for sorting collection in a Rails controller or API given column name and direction parameters."
-  spec.description   = "This gem is used for sorting collection based on declared columns in model and given a set of parameters."
+  spec.summary       = "This gem sorts ActiveRecord::Relation based on dynamic column (name, updated_at, etc.) and direction (asc, desc) parameters against columns defined in model."
+  spec.description   = "This gem adds an ActiveRecord::Relation method that sorts based on dynamic column (name, updated_at, etc.) and direction (asc, desc) parameters and validated against definition in model."
   spec.homepage      = ""
   spec.license       = "MIT"
 

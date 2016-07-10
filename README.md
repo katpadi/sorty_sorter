@@ -37,15 +37,15 @@ Or install it yourself as:
 
 An example when used in API:
 
-    ```sh
-    curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://katpadi/drones?sort=update_date&dir=desc
-    ```
+```sh
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://katpadi/drones?sort=update_date&dir=desc
+```
 
 In your API controller, you can do something like the syntax below to render a sorted collection:
 
-    ```ruby
-    Sorty::Sort.apply(Drone.all, params[:sort], params[:dir])
-    ```
+```ruby
+Sorty::Sort.apply(Drone.all, params[:sort], params[:dir])
+```
 
 ## Contributing
 
