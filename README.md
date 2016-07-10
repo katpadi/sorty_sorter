@@ -1,4 +1,4 @@
-# Sorty
+# Sorty Sorter
 
 This simple gem sorts collection in a Rails controller/API controller given a set of parameters based on the declared columns in the model. An ActiveRecord::Relation method `sorty_sort` is added for convenience.
 
@@ -9,7 +9,7 @@ When defining valid columns that are "sortable", you can choose to mask the attr
 
 Add this line to your application's Gemfile:
 
-    gem 'sorty', :git => 'git://github.com/katpadi/sorty.git'
+    gem 'sorty_sorter'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorty-sorter
+    $ gem install sorty_sorter
 
 ## Usage
 
@@ -55,7 +55,7 @@ Drone.available.sorty_sort(params[:sort], params[:dir])
 
 ## Contributing
 
-1. Fork it ( https://github.com/katpadi/sorty/fork )
+1. Fork it ( https://github.com/katpadi/sorty_sorter/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
