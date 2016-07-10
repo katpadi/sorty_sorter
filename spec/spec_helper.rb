@@ -22,7 +22,6 @@ require 'sorty'
 RSpec.configure do |config|
 
   config.before(:suite) do
-    puts "before suite"
     ActiveRecord::Migration.create_table(:drones, force: true) do |t|
       t.string :name
       t.integer :points
@@ -32,7 +31,6 @@ RSpec.configure do |config|
   end
 
   config.after(:suite) do
-    puts "after suite"
     models = [Drone]
     models.each do |model|
       ActiveRecord::Base.connection.execute "DROP TABLE #{model.table_name}"
