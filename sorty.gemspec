@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sorty/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sorty"
+  spec.name          = "sorty-sorter"
   spec.version       = Sorty::VERSION
   spec.authors       = ["Kat Padilla"]
   spec.email         = ["hello@katpadi.ph"]
