@@ -1,6 +1,9 @@
 # Sorty
 
-This gem is used for sorting collection in a Rails controller/API controller given a set of parameters based on the declared columns in the model.
+This simple gem sorts collection in a Rails controller/API controller given a set of parameters based on the declared columns in the model. An ActiveRecord::Relation method `sorty_sort` is added for convenience.
+
+When defining valid columns that are "sortable", you can choose to mask the attributes so the DB columns will not be announced to the world. In other words, you can choose to name your exposed attribute differently than your DB column name. See Usage #1 as reference.
+
 
 ## Installation
 
@@ -30,7 +33,7 @@ Or install it yourself as:
 2. Call sort service:
 
     ```ruby
-    Sorty::Sort.apply(collection, 'name', 'asc')
+    @collection.sorty_sort('name', 'asc')
     ```
 
 ## Example
@@ -41,10 +44,10 @@ An example when used in API:
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://katpadi/drones?sort=update_date&dir=desc
 ```
 
-In your API controller, you can do something like the syntax below to render a sorted collection:
+Say you want to sort the collection based on the column and direction passed in your API, you can use the gem's ActiveRecord::Relation method `sorty_sort` to sort the collection:
 
 ```ruby
-Sorty::Sort.apply(Drone.all, params[:sort], params[:dir])
+Drone.available.sorty_sort(params[:sort], params[:dir])
 ```
 
 ## Contributing
