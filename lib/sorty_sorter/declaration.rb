@@ -1,4 +1,4 @@
-module Sorty
+module SortySorter
   module Declaration
     extend ActiveSupport::Concern
     
@@ -19,4 +19,4 @@ module Sorty
   end
 end
 
-ActiveRecord::Base.send(:include, Sorty::Declaration)
+ActiveRecord::Base.send(:include, SortySorter::Declaration)

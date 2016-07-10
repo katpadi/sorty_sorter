@@ -1,4 +1,4 @@
-module Sorty
+module SortySorter
   class Sort
     def self.apply(collection, column = nil, direction = nil)
       collection.order(Params.new(column, direction, collection).options)

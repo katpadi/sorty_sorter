@@ -7,11 +7,11 @@ module Extensions
 
       # Introduce a new AR Relation method :-)
       def sorty_sort(column = nil, direction = nil)
-        ::Sorty::Sort.apply(self, column, direction)
+        ::SortySorter::Sort.apply(self, column, direction)
       end
 
       def sorty_sort!(column = nil, direction = nil)
-        ::Sorty::Sort.apply!(self, column, direction)
+        ::SortySorter::Sort.apply!(self, column, direction)
       end
     end
   end

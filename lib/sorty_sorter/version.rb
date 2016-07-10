@@ -1,3 +1,3 @@
-module Sorty
+module SortySorter
   VERSION = "0.0.7"
 end

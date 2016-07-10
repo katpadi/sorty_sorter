@@ -1,5 +1,5 @@
 require 'active_record'
-require 'sorty'
+require 'sorty_sorter'
 
 ActiveRecord::Base.establish_connection adapter: "mysql2", database: "test"
 

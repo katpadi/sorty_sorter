@@ -1,4 +1,4 @@
-module Sorty
+module SortySorter
   module Errors
     class SortyError < StandardError; end
 

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in sorty.gemspec
+# Specify your gem's dependencies in sorty-sorter.gemspec
 gemspec
 

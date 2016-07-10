@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'support/active_record'
 
-describe Sorty::Sort do
+describe SortySorter::Sort do
 
   before(:each) do
     clean_database

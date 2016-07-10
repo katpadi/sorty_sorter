@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe Sorty::Params do
+describe SortySorter::Params do
 
   before(:each) do
     clean_database
@@ -10,15 +10,15 @@ describe Sorty::Params do
 
   context "Bang method" do
     it "raises error when exposed attribute is invalid" do 
-      expect{Drone.all.sorty_sort!('amfufu', 'asc')}.to raise_error(Sorty::Errors::InvalidExposedAttribute)
+      expect{Drone.all.sorty_sort!('amfufu', 'asc')}.to raise_error(SortySorter::Errors::InvalidExposedAttribute)
     end
 
     it "raises error when no such column" do 
-      expect{Drone.all.sorty_sort!('no_such_col', 'desc')}.to raise_error(Sorty::Errors::ColumnDoesNotExist)
+      expect{Drone.all.sorty_sort!('no_such_col', 'desc')}.to raise_error(SortySorter::Errors::ColumnDoesNotExist)
     end
 
     it "raises error when invalid definition" do 
-      expect{Drone.all.sorty_sort!('', 'desc')}.to raise_error(Sorty::Errors::InvalidColumnDefined)
+      expect{Drone.all.sorty_sort!('', 'desc')}.to raise_error(SortySorter::Errors::InvalidColumnDefined)
     end
   end
 end

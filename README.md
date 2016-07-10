@@ -9,7 +9,7 @@ When defining valid columns that are "sortable", you can choose to mask the attr
 
 Add this line to your application's Gemfile:
 
-    gem 'sorty-sort'
+    gem 'sorty', :git => 'git://github.com/katpadi/sorty.git'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sorty-sort
+    $ gem install sorty-sorter
 
 ## Usage
 
