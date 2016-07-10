@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hello@katpadi.ph"]
   spec.summary       = %q{ Sorts ActiveRecord::Relation based on dynamic parameters against the attributes defined in model. }
   spec.description   = %q{ This gem adds an ActiveRecord::Relation method that sorts based on dynamic column (i.e. name, updated_at, etc.) and direction (asc, desc) parameters and validated against definition in model. }
-  spec.homepage      = %q{ https://github.com/katpadi/sorty_sorter }
+  spec.homepage      = "https://github.com/katpadi/sorty_sorter"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 1.9.3'
 
