@@ -30,11 +30,13 @@ Or install it yourself as:
 
    In the example above, `update_date` is the exposed attribute and it represents the `updated_at` column in DB.
 
-2. Call sort service:
+2. Call sort method:
 
     ```ruby
     @collection.sorty_sort('name', 'asc')
     ```
+
+There is also a bang method `sorty_sort!` that will raise an exception if you're doing anything wrong.
 
 ## Example
 
