@@ -1,5 +1,7 @@
 # Sorty Sorter
 
+[![Gem Version](https://badge.fury.io/rb/sorty_sorter.svg)](https://badge.fury.io/rb/sorty_sorter)
+
 This simple gem sorts collection in a Rails controller/API controller given a set of parameters based on the declared columns in the model. An ActiveRecord::Relation method `sorty_sort` is added for convenience.
 
 When defining valid columns that are "sortable", you can choose to mask the attributes so the DB columns will not be announced to the world. In other words, you can choose to name your exposed attribute differently than your DB column name. See Usage #1 as reference.
