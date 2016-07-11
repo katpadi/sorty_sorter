@@ -44,16 +44,16 @@ There is also a bang method `sorty_sort!` that will raise an exception if you're
 
 As mentioned, a definition of the whitelist hash should be done in the model.
 
-    ```ruby
-    # app/models/drone.rb
+```ruby
+# app/models/drone.rb
 
-    class Drone < ActiveRecord::Base
-
-      sort_with update_date: { updated_at: :desc },
-                points: { points: :asc },
-                title: { name: :asc }
-    end
-    ```
+class Drone < ActiveRecord::Base
+  # Define!
+  sort_with update_date: { updated_at: :desc },
+  points: { points: :asc },
+  title: { name: :asc }
+end
+```
 
 The outer Hash keys (i.e. `update_date`) represent the "exposed" attributes whereas their corresponding values (`updated_at: :desc`) represent the DB column name as the key, and its default sort direction in case there is no argument passed as the value.
 
@@ -61,9 +61,9 @@ Say you want to sort the collection based on `name`, the parameter `title` shoul
 
 Since the gem already mixed in a method `sorty_sort` to the ActiveRecord::Relation, you can do the following conveniently:
 
-    ```ruby
-    Drone.available.sorty_sort('title', 'asc')
-    ```
+```ruby
+Drone.all.sorty_sort('title', 'asc')
+```
 
 ## Contributing
 
