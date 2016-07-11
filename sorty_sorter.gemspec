@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SortySorter::VERSION
   spec.authors       = ["Kat Padilla"]
   spec.email         = ["hello@katpadi.ph"]
-  spec.summary       = %q{ Sorts ActiveRecord::Relation based on dynamic parameters against the attributes defined in model. }
-  spec.description   = %q{ This gem adds an ActiveRecord::Relation method that sorts based on dynamic column (i.e. name, updated_at, etc.) and direction (asc, desc) parameters and validated against definition in model. }
+  spec.summary       = %q{ This gem sorts AR collection when given a set of parameters that will be validated against the whitelisted attributes in the model. }
+  spec.description   = %q{ This gem sorts AR collection when given a set of parameters that will be validated against the whitelisted attributes in the model. The gem mixed in a `sorty_sort` method in the ActiveRecord::Relation. }
   spec.homepage      = "https://github.com/katpadi/sorty_sorter"
   spec.license       = "MIT"
   spec.required_ruby_version = '>= 1.9.3'

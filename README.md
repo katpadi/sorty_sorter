@@ -4,10 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/katpadi/sorty_sorter/badges/gpa.svg)](https://codeclimate.com/github/katpadi/sorty_sorter)
 [![Test Coverage](https://codeclimate.com/github/katpadi/sorty_sorter/badges/coverage.svg)](https://codeclimate.com/github/katpadi/sorty_sorter/coverage)
 
-This simple gem sorts collection in a Rails controller/API controller given a set of parameters based on the declared columns in the model. An ActiveRecord::Relation method `sorty_sort` is added for convenience.
-
-When defining valid columns that are "sortable", you can choose to mask the attributes so the DB columns will not be announced to the world. In other words, you can choose to name your exposed attribute differently than your DB column name. See Usage #1 as reference.
-
+This gem sorts AR collection when given a set of parameters that will be validated against the whitelisted attributes in the model.
 
 ## Installation
 
@@ -25,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-1. Add declaration of sorting columns to model:
+1. Define whitelist attributes to model:
 
     ```ruby
     sort_with update_date: { updated_at: :desc },
@@ -33,9 +30,9 @@ Or install it yourself as:
     ```
 
    In the example above, `update_date` is the exposed attribute and it represents the `updated_at` column in DB.
-   The declaration will serve as the "valid" attributes that may be used for sorting.
+   The whitelist hash represents the "valid" attributes that may be sorted.
 
-2. Call sort method:
+2. Call `sorty_sort` method:
 
     ```ruby
     @collection.sorty_sort('name', 'asc')
@@ -45,17 +42,27 @@ There is also a bang method `sorty_sort!` that will raise an exception if you're
 
 ## Example
 
-An example when used in API:
+As mentioned, a definition of the whitelist hash should be done in the model.
 
-```sh
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://katpadi/drones?sort=update_date&dir=desc
-```
+  ```ruby
+  # app/models/drone.rb
 
-Say you want to sort the collection based on the column and direction passed in your API, you can use the gem's ActiveRecord::Relation method `sorty_sort` to sort the collection:
+  class Drone < ActiveRecord::Base
 
-```ruby
-Drone.available.sorty_sort(params[:sort], params[:dir])
-```
+    sort_with update_date: { updated_at: :desc },
+              points: { points: :asc },
+              title: { name: :asc }
+  end
+    ```
+The outer Hash keys (i.e. `update_date`) represent the "exposed" attributes whereas their corresponding values (`updated_at: :desc`) represent the DB column name as the key, and its default sort direction in case there is no argument passed as the value.
+
+Say you want to sort the collection based on `name`, the parameter `title` should be passed because that is the "exposed" attribute. 
+
+Since the gem already mixed in a method `sorty_sort` to the ActiveRecord::Relation, you can do the following conveniently:
+
+  ```ruby
+  Drone.available.sorty_sort('title', 'asc')
+  ```
 
 ## Contributing
 
